@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hotel_id: 1
+  category: MyString
+  price: 9.99
+  extras: MyString
+  roomImage: MyString
+
+two:
+  hotel_id: 1
+  category: MyString
+  price: 9.99
+  extras: MyString
+  roomImage: MyString

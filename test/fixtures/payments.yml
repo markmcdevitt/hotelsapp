@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  booking_id: 1
+  user_id: 1
+  totalCost: 9.99
+  pamentMethod: MyString
+  deposit: 9.99
+
+two:
+  booking_id: 1
+  user_id: 1
+  totalCost: 9.99
+  pamentMethod: MyString
+  deposit: 9.99

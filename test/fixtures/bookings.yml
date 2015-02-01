@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  room_id: 1
+  checkin: 2015-02-01
+  checkout: 2015-02-01
+  noOfPeople: 1
+
+two:
+  room_id: 1
+  checkin: 2015-02-01
+  checkout: 2015-02-01
+  noOfPeople: 1
