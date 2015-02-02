@@ -3,9 +3,9 @@
 <table>
   <tr>
     <th>Booking</th>
-    <th>User</th>
-    <th>Totalcost</th>
-    <th>Pamentmethod</th>
+    <th>Name of the customer</th>
+    <th>Total Cost</th>
+    <th>Payment Method</th>
     <th>Deposit</th>
     <th></th>
     <th></th>
@@ -15,7 +15,7 @@
 <% @payments.each do |payment| %>
   <tr>
     <td><%= payment.booking_id %></td>
-    <td><%= payment.user_id %></td>
+    <td><%= payment.user.name %></td>
     <td><%= payment.totalCost %></td>
     <td><%= payment.pamentMethod %></td>
     <td><%= payment.deposit %></td>

@@ -6,22 +6,17 @@
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @payment.user_id %>
+  <b>Thanks for booking with us</b>
+  <%= @payment.user.name %>
 </p>
 
 <p>
-  <b>Totalcost:</b>
-  <%= @payment.totalCost %>
-</p>
-
-<p>
-  <b>Pamentmethod:</b>
+  <b>Paid by:</b>
   <%= @payment.pamentMethod %>
 </p>
 
 <p>
-  <b>Deposit:</b>
+  <b>Deposit paid:</b>
   <%= @payment.deposit %>
 </p>
 

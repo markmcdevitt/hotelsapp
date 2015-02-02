@@ -20,8 +20,10 @@
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :contactInfo %><br />
-    <%= f.text_field :contactInfo %>
+    <%= f.label :"Contact Information" %><br />
+    <%= f.select :contactInfo, ["01-","02-","03-","04-","05-","06-","07-","08-","09-", "085-", "086-","087- ",] %>
+	<%= f.text_field :contactInfo %>
+	
   </div>
   <div class="field">
     <%= f.label :address %><br />

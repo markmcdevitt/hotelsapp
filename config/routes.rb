@@ -1,13 +1,31 @@
 Hotelsapp::Application.routes.draw do
-  resources :users
 
-  resources :payments
+   get "sessions/new"
 
-  resources :bookings
+   get "sessions/create"
 
-  resources :rooms
+   get "sessions/destroy"
 
-  resources :hotels
+   get "pages/home"
+
+   get "pages/about"
+
+	
+	
+	resources :users
+
+    resources :payments
+
+    resources :bookings
+
+    resources :rooms
+ 
+    resources :hotels
+		
+    resources :sessions
+	match '/signin', :to => 'sessions#new'
+	match '/signout', :to => 'sessions#destroy'
+	match '/about', :to => 'pages#about'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +76,7 @@ Hotelsapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'pages#home'
 
   # See how all your routes lay out with "rake routes"
 

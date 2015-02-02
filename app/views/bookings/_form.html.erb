@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :room_id %><br />
-    <%= f.number_field :room_id %>
+    <%= f.label :"Total Cost" %><br />
+	<%= f.collection_select :room_id , Room.all, :id, :price %>
   </div>
   <div class="field">
-    <%= f.label :checkin %><br />
+    <%= f.label :"Check In" %><br />
     <%= f.date_select :checkin %>
   </div>
   <div class="field">
-    <%= f.label :checkout %><br />
+    <%= f.label :"Check Out" %><br />
     <%= f.date_select :checkout %>
   </div>
   <div class="field">
-    <%= f.label :noOfPeople %><br />
-    <%= f.number_field :noOfPeople %>
+    <%= f.label :"Number of People" %><br />
+    <%= f.select :noOfPeople,[1,2,3,4,5] %>
   </div>
   <div class="actions">
     <%= f.submit %>

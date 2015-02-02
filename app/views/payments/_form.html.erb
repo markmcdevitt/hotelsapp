@@ -13,23 +13,20 @@
 
   <div class="field">
     <%= f.label :booking_id %><br />
-    <%= f.number_field :booking_id %>
+	<%= f.collection_select :booking_id , Booking.all, :id, :checkin %>
+	<%= f.collection_select :booking_id , Booking.all, :id, :checkout %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
+	<%= f.collection_select :user_id , User.all, :id, :email %>
   </div>
   <div class="field">
-    <%= f.label :totalCost %><br />
-    <%= f.text_field :totalCost %>
+    <%= f.label :"Payment Method" %><br />
+    <%= f.select :pamentMethod, ["Visa", "American Express", "Master card"] %>
   </div>
   <div class="field">
-    <%= f.label :pamentMethod %><br />
-    <%= f.text_field :pamentMethod %>
-  </div>
-  <div class="field">
-    <%= f.label :deposit %><br />
-    <%= f.text_field :deposit %>
+    <%= f.label :"Deposit" %><br />
+    <%= f.select :deposit, [50] %>
   </div>
   <div class="actions">
     <%= f.submit %>

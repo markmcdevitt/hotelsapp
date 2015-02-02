@@ -6,7 +6,7 @@
     <th>Category</th>
     <th>Price</th>
     <th>Extras</th>
-    <th>Roomimage</th>
+    <th>Picture of the Room</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +14,11 @@
 
 <% @rooms.each do |room| %>
   <tr>
-    <td><%= room.hotel_id %></td>
+    <td><%= Hotel.name %></td>
     <td><%= room.category %></td>
     <td><%= room.price %></td>
     <td><%= room.extras %></td>
-    <td><%= room.roomImage %></td>
+    <td><%= image_tag(room.roomImage , :size => "100x100")%></td>
     <td><%= link_to 'Show', room %></td>
     <td><%= link_to 'Edit', edit_room_path(room) %></td>
     <td><%= link_to 'Destroy', room, confirm: 'Are you sure?', method: :delete %></td>

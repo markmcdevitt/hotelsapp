@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :hotel_id %><br />
-    <%= f.number_field :hotel_id %>
+	<%= f.collection_select :hotel_id, Hotel.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.label :"Type of room" %><br />
+    <%= f.select :category, ["Deluxe Rooms", "Standard Room", "Suite"] %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
@@ -28,7 +28,7 @@
     <%= f.text_field :extras %>
   </div>
   <div class="field">
-    <%= f.label :roomImage %><br />
+    <%= f.label :"Picture of the room" %><br />
     <%= f.text_field :roomImage %>
   </div>
   <div class="actions">
