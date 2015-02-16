@@ -1,8 +1,17 @@
+<br>
+<br>
 <h1>Listing bookings</h1>
 
 <table>
+	<col width="130">
+	<col width="130"> 
+	<col width="130">
+	<col width="130"> 
+	<col width="50"> 
+	<col width="50">
+	<col width="50"> 
   <tr>
-    <th>Room</th>
+	<th>Room Type</th>
     <th>Check In Date</th>
     <th>Check Out Date</th>
     <th>Number Of People</th>
@@ -12,7 +21,7 @@
 
 <% @bookings.each do |booking| %>
   <tr>
-    <td><%= booking.room_id %></td>
+	<th><%= booking.room.category %></th>
     <td><%= booking.checkin %></td>
     <td><%= booking.checkout %></td>
     <td><%= booking.noOfPeople %></td>

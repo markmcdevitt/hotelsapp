@@ -1,8 +1,15 @@
+<br>
+<br>
 <p id="notice"><%= notice %></p>
 
+
 <p>
-  <b>Room:</b>
-  <%= @booking.room_id %>
+  <b>Room Name:</b>
+  <%= @booking.room.hotel.name %>
+</p>
+<p>
+  <b>Room Type:</b>
+  <%= @booking.room.category %>
 </p>
 
 <p>
@@ -20,6 +27,6 @@
   <%= @booking.noOfPeople %>
 </p>
 
-
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+<%= link_to 'Back', rooms_path %> |
+<%= link_to 'Payment', new_payment_path %>

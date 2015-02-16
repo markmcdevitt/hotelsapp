@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hotelsapp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div id = "banner">
-	<%= image_tag("rails.png", :size =>"50x50")%>
-	Hotel Hunter.com
-</div>
-<%= yield %>
+	<head>
+	  <title>Hotelsapp</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id = "banner">
+			<%= image_tag("hotel icon.jpg", :size =>"50x50")%>
+			Hotel Hunter.com
+		</div>
+		<div id = "nav">
+			<ul>
+				<% if !signed_in? %>
+					<li><%= link_to "Sign in", signin_path %></li>
+				<% else %>
+					<li>Welcome <%=@current_user.name%></li>
+					<li><%= link_to "Sign Out", signout_path %>
+				<% end %>
+			</ul>
+		</div>	
+		<div class = "navbar navbar-default navbar-fixed-bottom">
+			<div = "container">
+				<p class = "navbar-text">Site built by Mark McDevitt</p>
+				<a href="https://github.com/markmcdevitt/hotelsapp" class = "navbar-btn btn-info btn pull-right">My Github</a>
+			</div>
+		</div>
+	<%= yield %>
 
-</body>
+	</body>
 </html>

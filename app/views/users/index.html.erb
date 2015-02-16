@@ -1,9 +1,16 @@
+<br>
 <h1>Listing users</h1>
 
 <table>
+    <col width="130">
+	<col width="180"> 
+	<col width="80">
+	<col width="50"> 
+	<col width="50">
+	<col width="50"> 
+	
   <tr>
-    <th>Room</th>
-    <th>Name</th>
+    <th>Username</th>
     <th>Email</th>
     <th>Phone</th>
     <th></th>
@@ -13,7 +20,6 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.room_id %></td>
     <td><%= user.name %></td>
     <td><%= user.email %></td>
     <td><%= user.phone %></td>

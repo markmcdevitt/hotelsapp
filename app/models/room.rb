@@ -1,6 +1,6 @@
 class Room < ActiveRecord::Base
-	belongs_to :hotels
-	belongs_to :booking
+	belongs_to :hotel
+	has_many :bookings, :dependent => :destroy
 	
 	
 end

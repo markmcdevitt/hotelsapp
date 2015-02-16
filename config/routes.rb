@@ -1,16 +1,15 @@
 Hotelsapp::Application.routes.draw do
 
+  get "pages/home"
+
+  get "pages/about"
+
    get "sessions/new"
 
    get "sessions/create"
 
    get "sessions/destroy"
 
-   get "pages/home"
-
-   get "pages/about"
-
-	
 	
 	resources :users
 
@@ -25,7 +24,6 @@ Hotelsapp::Application.routes.draw do
     resources :sessions
 	match '/signin', :to => 'sessions#new'
 	match '/signout', :to => 'sessions#destroy'
-	match '/about', :to => 'pages#about'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

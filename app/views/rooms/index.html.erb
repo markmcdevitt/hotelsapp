@@ -1,6 +1,14 @@
-<h1>Listing rooms</h1>
+<h1><center>Listing rooms</h1>
 
 <table>
+	<col width="130">
+	<col width="130"> 
+	<col width="130">
+	<col width="130"> 
+    <col width="130">
+	<col width="50"> 
+	<col width="50">
+	<col width="50"> 
   <tr>
     <th>Hotel</th>
     <th>Category</th>
@@ -14,7 +22,7 @@
 
 <% @rooms.each do |room| %>
   <tr>
-    <td><%= Hotel.name %></td>
+    <td><%= room.hotel.name %></td>
     <td><%= room.category %></td>
     <td><%= room.price %></td>
     <td><%= room.extras %></td>
@@ -22,10 +30,13 @@
     <td><%= link_to 'Show', room %></td>
     <td><%= link_to 'Edit', edit_room_path(room) %></td>
     <td><%= link_to 'Destroy', room, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  </tr> 
 <% end %>
 </table>
 
-<br />
 
 <%= link_to 'New Room', new_room_path %>
+<br >
+<br >
+<br >
+<br >
