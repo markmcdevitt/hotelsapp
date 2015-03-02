@@ -1,13 +1,7 @@
 <br>
 <h1>Listing users</h1>
 
-<table>
-    <col width="130">
-	<col width="180"> 
-	<col width="80">
-	<col width="50"> 
-	<col width="50">
-	<col width="50"> 
+<table  border = "3" style="width:100%" >
 	
   <tr>
     <th>Username</th>
@@ -25,11 +19,13 @@
     <td><%= user.phone %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+	<% if signed_in? %>
+	<td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%#= link_to 'New User', new_user_path %>

@@ -1,6 +1,9 @@
 class HotelsController < ApplicationController
   # GET /hotels
   # GET /hotels.json
+  
+  
+  
   def index
     @hotels = Hotel.all
 
@@ -68,6 +71,7 @@ class HotelsController < ApplicationController
       end
     end
   end
+
 
   # DELETE /hotels/1
   # DELETE /hotels/1.json

@@ -1,26 +1,67 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>Hotelsapp</title>
+	  <title>Hotels app</title>
 	  <%= stylesheet_link_tag    "application", :media => "all" %>
 	  <%= javascript_include_tag "application" %>
 	  <%= csrf_meta_tags %>
 	</head>
+	<div align = "right" id = "search">
+		<%= render :partial =>'rooms/search'%>
+	</div>	
 	<body>
 		<div id = "banner">
 			<%= image_tag("hotel icon.jpg", :size =>"50x50")%>
 			Hotel Hunter.com
 		</div>
+		
 		<div id = "nav">
 			<ul>
-				<% if !signed_in? %>
-					<li><%= link_to "Sign in", signin_path %></li>
-				<% else %>
-					<li>Welcome <%=@current_user.name%></li>
-					<li><%= link_to "Sign Out", signout_path %>
-				<% end %>
+			<% if !asigned_in? %>
+					<% if !signed_in? %>
+							<li><%= link_to "Sign in", signin_path %></li>
+							<li><%= link_to " | Administrator sign in ", asignin_path %></li>
+					<% else %>
+							<li>Welcome <%=@current_user.name%></li>
+							<li><%= link_to " | Hotel ", hotels_path%></li>
+							<li><%= link_to " | Rooms ", rooms_path%></li>
+							<li><%= link_to "Sign Out", signout_path%>
+					<% end %>
+			<% else%>
+					<li>Welcome <%=@current_admin.name%></li>
+					<li><%= link_to " | Hotel ", hotels_path%></li>
+					<li><%= link_to " | Rooms ", rooms_path%></li>
+					<li><%= link_to " | Users ", users_path%></li>
+					<li><%= link_to " | Bookings ", bookings_path%></li>
+					<li><%= link_to " | Sign Out", asignout_path %>
+				<% end %>					
 			</ul>
-		</div>	
+			
+			
+		</div>
+		<br>
+
+		<p id="date" align="right">Today is the </p>
+		<script>
+			document.getElementById("date").innerHTML = Date();	
+		</script>
+
+		<p id="dom1">If your a new user click the new user link, if not. Tell me to go away</p>
+
+		<script>
+		$(document).ready(function(){
+			$("#button1").click(function(){
+				$("#dom1").slideUp(500, function(){
+					
+				});
+			});
+		});
+
+		</script>
+		  
+		<button id="button1">Go Away!!</button>
+		
+		
 		<div class = "navbar navbar-default navbar-fixed-bottom">
 			<div = "container">
 				<p class = "navbar-text">Site built by Mark McDevitt</p>

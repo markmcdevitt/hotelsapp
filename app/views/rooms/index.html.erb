@@ -1,14 +1,7 @@
-<h1><center>Listing rooms</h1>
+<h1>Listing rooms</h1>
 
-<table>
-	<col width="130">
-	<col width="130"> 
-	<col width="130">
-	<col width="130"> 
-    <col width="130">
-	<col width="50"> 
-	<col width="50">
-	<col width="50"> 
+<table  border = "3" style="width:100%" >
+ 
   <tr>
     <th>Hotel</th>
     <th>Category</th>
@@ -28,13 +21,13 @@
     <td><%= room.extras %></td>
     <td><%= image_tag(room.roomImage , :size => "100x100")%></td>
     <td><%= link_to 'Show', room %></td>
+	<% if asigned_in? %>
     <td><%= link_to 'Edit', edit_room_path(room) %></td>
     <td><%= link_to 'Destroy', room, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
   </tr> 
 <% end %>
 </table>
-
-
 <%= link_to 'New Room', new_room_path %>
 <br >
 <br >

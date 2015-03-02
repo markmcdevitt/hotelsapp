@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
   # GET /rooms
   # GET /rooms.json
+  
+  
   def index
     @rooms = Room.all
 
@@ -68,6 +70,17 @@ class RoomsController < ApplicationController
       end
     end
   end
+  
+  def search
+	@rooms = Room.search params[:q]
+	 unless @rooms.empty?
+		render 'index'
+	else	
+		flash[:notice] = 'No rooms in this category '
+		render 'index'
+	end
+  end
+
 
   # DELETE /rooms/1
   # DELETE /rooms/1.json

@@ -6,4 +6,13 @@ module ApplicationHelper
 			@current_user = User.find_by_id(session[:user_id])
 		end
 	end
+	
+	def asigned_in?
+		if session[:a_id].nil?
+			return
+		else
+			@current_admin = Admin.find_by_id(session[:a_id])
+		end
+	end	
+	
 end

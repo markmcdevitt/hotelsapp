@@ -38,10 +38,11 @@
     <%= f.text_field :latitude %>
   </div>
   <div class="field">
-    <%= f.label :image %><br />
-    <%= f.text_field :image %>
+       <%= f.label :image if @hotel.image?   %><br />
+       <%= f.file_field :image %>
   </div>
-  <div class="actions">
+  <div class="actions"> 
     <%= f.submit %>
+	<br><br><br>
   </div>
 <% end %>

@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+<%= javascript_include_tag "application"%>
 

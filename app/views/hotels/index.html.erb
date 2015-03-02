@@ -1,24 +1,18 @@
 <h1>Listing hotels</h1>
 
-<table>
-	<col width="130">
-	<col width="130"> 
-	<col width="130">
-	<col width="130"> 
-    <col width="130">
-	<col width="130"> 
-	<col width="130">
-	<col width="50"> 
-	<col width="50">
-	<col width="50"> 
+
+<%= link_to 'New Hotel', new_hotel_path %>
+
+<table border = "3" style="width:100%">
+
   <tr>
     <th>Name</th>
     <th>Location</th>
     <th>Contact Information</th>
     <th>Address</th>
     <th>Longitude</th>
-    <th>Latitude</th>
-    <th>Image</th>
+    <th>Map</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -30,16 +24,18 @@
     <td><%= hotel.location %></td>
     <td><%= hotel.contactInfo %></td>
     <td><%= hotel.address %></td>
-    <td><%= hotel.longitude %></td>
-    <td><%= hotel.latitude %></td>
+    <td><%= image_tag "http://maps.google.com/maps/api/staticmap?size=200x200&sensor=false&zoom=16&markers=#{hotel.latitude}%2C#{hotel.longitude}" %>
     <td><%= image_tag(hotel.image , :size => "100x100")%></td>
-    <td><%= link_to 'Show', hotel %></td>
-    <td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+    <td><%= link_to 'Rooms link', rooms_path %></td>
+	<td><%= link_to 'Edit', edit_hotel_path(hotel) %></td>
+	<% if asigned_in? %>
+	<td><%= link_to 'Show', hotel %></td>
+   
     <td><%= link_to 'Destroy', hotel, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
-
+  <br>  <br>  <br>  <br>
 <br />
 
-<%= link_to 'New Hotel', new_hotel_path %>

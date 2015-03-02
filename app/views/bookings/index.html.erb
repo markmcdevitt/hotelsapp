@@ -2,14 +2,7 @@
 <br>
 <h1>Listing bookings</h1>
 
-<table>
-	<col width="130">
-	<col width="130"> 
-	<col width="130">
-	<col width="130"> 
-	<col width="50"> 
-	<col width="50">
-	<col width="50"> 
+<table  border = "3" style="width:100%" >
   <tr>
 	<th>Room Type</th>
     <th>Check In Date</th>
@@ -21,17 +14,20 @@
 
 <% @bookings.each do |booking| %>
   <tr>
+	<th><%= booking.room.hotel.name %></th>
 	<th><%= booking.room.category %></th>
-    <td><%= booking.checkin %></td>
-    <td><%= booking.checkout %></td>
+    <td><%= booking.room.checkin %></td>
+    <td><%= booking.room.checkout %></td>
     <td><%= booking.noOfPeople %></td>
     <td><%= link_to 'Show', booking %></td>
+	<% if signed_in? %>
     <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
     <td><%= link_to 'Destroy', booking, confirm: 'Are you sure?', method: :delete %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Booking', new_booking_path %>
+<%#= link_to 'New Booking', new_booking_path %>

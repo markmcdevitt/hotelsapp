@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150201115541) do
+ActiveRecord::Schema.define(:version => 20150302104121) do
+
+  create_table "admins", :force => true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "bookings", :force => true do |t|
     t.integer  "room_id"
@@ -42,6 +49,14 @@ ActiveRecord::Schema.define(:version => 20150201115541) do
     t.decimal  "deposit"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "rooms", :force => true do |t|

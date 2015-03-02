@@ -14,11 +14,7 @@
 
   
   
-  <div class="field">
-    <%= f.label :booking_id %><br />
-	<%= f.collection_select :booking_id , Booking.all, :id, :checkin %>
-	<%= f.collection_select :booking_id , Booking.all, :id, :checkout %>
-  </div>
+  
   <div class="field">
     <%= f.label :"Email"%><br />
 	<%= f.collection_select :user_id , User.all, :id, :email %>

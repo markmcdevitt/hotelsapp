@@ -20,7 +20,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'carrierwave'
+gem 'jquery-rails', '>=0.2.5'
+gem 'thor', '>=0.14.4'
+
+gem 'geocoder'
 
 # To use ActiveModel has_secure_password
  gem 'bcrypt-ruby', '~> 3.0.0'

@@ -21,6 +21,8 @@
   <b>Check Out Date:</b>
   <%= @booking.checkout %>
 </p>
+<p>Number of days your staying:</p>
+	<%= (@booking.checkin - @booking.checkout).to_i %>
 
 <p>
   <b>Number of People Staying:</b>

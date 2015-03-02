@@ -13,16 +13,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :"Total Cost" %><br />
-	<%= f.collection_select :room_id , Room.all, :id, :price %>
+    <%= f.label :"Please confirm the Hotel" %><br />
+	<%= f.collection_select :room_id, Hotel.all, :id, :name %>
+  </div>
+   <div class="field">
+    <%= f.label :category %><br />
+	<%= f.collection_select :room_id, Room.all, :id, :category %>
   </div>
   <div class="field">
     <%= f.label :"Check In" %><br />
-    <%= f.date_select :checkin %>
+    <%= f.date_select :checkin , {:order => [:day,:month,:year], start_year: Time.now.year, start_month: Time.now.month, end_year: Time.now.year + 1} %>
   </div>
   <div class="field">
     <%= f.label :"Check Out" %><br />
-    <%= f.date_select :checkout %>
+    <%= f.date_select :checkout,  {:order => [:day,:month,:year], start_year: Time.now.year,start_month: Time.now.month, end_year: Time.now.year + 1} %>
   </div>
   <div class="field">
     <%= f.label :"Number of People" %><br />
